@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+<title>Thomas Tran | Avril Yang</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+
+</head>
+  <body>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="topo.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+    <!-- slider -->
+    <div class="header">
+      <a href="index.html">Home</a>
+      <a>Video</a>
+    </div>
+    <div class="wrapper">
+
+
+      <div class="titles">
+        <h1> <span id="industry"></span> Unemployment Rate 2019</h1>
+        <h1> <span id="industry"></span> Unemployment Rate 2020</h1>
+      </div>
+      <div class="container-wrapper">
+
+
+        <div class="container">
+          <div class="legendWrapper">
+            <div class="legend">
+              <div class="item item5"></div>
+              <div class="item item4"></div>
+              <div class="item item3"></div>
+              <div class="item item2"></div>
+              <div class="item item1"></div>
+              <div class="item item0"></div>
+            </div>
+            <div class="legend">
+                <p>Greater than 20%</p>
+                <p>15% - 20%</p>
+                <p>10% - 15%</p>
+                <p>5% - 10%</p>
+                <p>0% - 5%</p>
+                <p>No Data Available</p>
+            </div>
+          </div>
+          <!-- the maps are attached to the above container -->
+
+        </div>
+
+
+
+
+      <div class="slideContainer">
+        <h3 style="text-align:center; font-weight: normal;">Select Month </h3>
+        <input style="width: 200px;"type="range" min="1" max="12" value="1" name="monthSelect" class="slider" id="range">
+      </div>
+      <div id="output"></div>
+    </div>
+
+
+      <div class="form-container"> <!-- FORM -->
+        <input style="margin-left: 0px;"type="radio" class="filterbox" name="All" value="All" >
+        <label for="All"> All </label>
+
+        <input type="radio" class="filterbox" name="All" value="Agriculture" checked>
+        <label for="All"> Agriculture </label>
+
+        <input type="radio" class="filterbox" name="All" value="Forestry">
+        <label for="All"> Forestry </label>
+
+        <input type="radio" class="filterbox" name="All" value="Utilities">
+        <label for="All"> Utilities </label>
+
+        <input type="radio" class="filterbox" name="All" value="Construction">
+        <label for="All"> Construction </label>
+
+        <input type="radio" class="filterbox" name="All" value="Transportation">
+        <label for="All"> Educational </label>
+      </div> <!-- ./FORM -->
+
+      <div class="container vis">
+        <div id ="vis_2019"></div>
+        <div id ="vis_2020"></div>
+      </div>
+
+    </div>
+
+    <script src="mapScript.js"></script>
+    <script src="scatterplot.js"></script>
+
+  </body>
+</html>
